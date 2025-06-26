@@ -41,7 +41,7 @@ class LogWidgetState extends State<LogWidget>
           widget.netOptions.reqOptions!.url!,
           style: const TextStyle(fontSize: 11),
         ),
-        backgroundColor: theme.scaffoldBackgroundColor,
+        backgroundColor: Colors.white,
         elevation: 1.0,
         titleTextStyle: theme.textTheme.headlineSmall,
         iconTheme: theme.iconTheme,

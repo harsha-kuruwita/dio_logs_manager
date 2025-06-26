@@ -48,7 +48,10 @@ class LogRequestWidgetState extends State<LogRequestWidget>
                           'duration:${resOpt?.duration ?? 0}ms\n${dataFormat(reqOpt.data)}'
                           '\nparams:${toJson(reqOpt.params)}\nheader:${reqOpt.headers}');
                     },
-                    child: const Text('Copy all'),
+                    child: const Text(
+                      'Copy all',
+                      style: TextStyle(fontSize: 10, color: Colors.black),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -83,7 +86,7 @@ class LogRequestWidgetState extends State<LogRequestWidget>
   Text _getDefText(String str) {
     return Text(
       str,
-      style: const TextStyle(fontSize: 15),
+      style: const TextStyle(fontSize: 15, color: Colors.black),
     );
   }
 
@@ -114,7 +117,8 @@ Widget _buildKeyValue(BuildContext context, String k, dynamic v) {
           padding: const EdgeInsets.symmetric(vertical: 2),
           child: Text(
             '$k: ',
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
       ),
@@ -137,7 +141,8 @@ Widget buildJsonView(BuildContext context, String key, dynamic data,
           padding: const EdgeInsets.symmetric(vertical: 2),
           child: Text(
             '$key: ',
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
       ),
