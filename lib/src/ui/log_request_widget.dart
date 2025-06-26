@@ -31,16 +31,45 @@ class LogRequestWidgetState extends State<LogRequestWidget>
     //     getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.yellow,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Row(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        copyClipboard(
+                            context,
+                            'url:${reqOpt.url}\nmethod:${reqOpt.method}\nrequestTime:$requestTime\nresponseTime:$responseTime\n'
+                            'duration:${resOpt?.duration ?? 0}ms\n${dataFormat(reqOpt.data)}'
+                            '\nparams:${toJson(reqOpt.params)}\nheader:${reqOpt.headers}');
+                      },
+                      child: const Text(
+                        'Copy all',
+                        style: TextStyle(fontSize: 10, color: Colors.black),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Expanded(
+                      child: Text(
+                        'Tip: press a key or long press Object to copy the value to the clipboard.',
+                        style: TextStyle(fontSize: 10, color: Colors.red),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Text(
-                'Test',
-                style: TextStyle(color: Colors.black, fontSize: 44),
+                'Testcc',
+                style: TextStyle(color: Colors.black, fontSize: 12),
               )
             ],
           ),
