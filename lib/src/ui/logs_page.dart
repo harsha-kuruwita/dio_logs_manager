@@ -24,7 +24,7 @@ class _LogsPageState extends State<LogsPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Request Logs"),
-        backgroundColor: theme.scaffoldBackgroundColor,
+        backgroundColor: Colors.white,
         titleTextStyle: theme.textTheme.headlineSmall,
         iconTheme: theme.iconTheme,
         elevation: 1.0,
