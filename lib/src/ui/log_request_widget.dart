@@ -31,7 +31,7 @@ class LogRequestWidgetState extends State<LogRequestWidget>
         getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
