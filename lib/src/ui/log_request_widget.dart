@@ -125,7 +125,11 @@ Widget _buildKeyValue(BuildContext context, String k, dynamic v) {
           ),
         ),
       ),
-      Flexible(child: Text('${v is String ? v : v?.toString()}'))
+      Flexible(
+          child: Text(
+        '${v is String ? v : v?.toString()}',
+        style: TextStyle(color: Colors.black),
+      ))
     ],
   );
 }
@@ -210,16 +214,25 @@ class _LogsRequestBody extends StatelessWidget {
       formDataMap = {}
         ..addEntries(data.fields)
         ..addEntries(data.files);
-      return Text('formdata:${map2Json(formDataMap)}');
+      return Text(
+        'formdata:${map2Json(formDataMap)}',
+        style: TextStyle(color: Colors.black),
+      );
     } else if (data is String) {
       try {
         var decodedMap = json.decode(data);
         return buildJsonView(context, 'Body', decodedMap);
       } catch (e) {
-        return Text('Body: $data');
+        return Text(
+          'Body: $data',
+          style: TextStyle(color: Colors.black),
+        );
       }
     } else {
-      return Text('Body: $data');
+      return Text(
+        'Body: $data',
+        style: TextStyle(color: Colors.black),
+      );
     }
     return Card(
       elevation: 0,

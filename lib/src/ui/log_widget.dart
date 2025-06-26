@@ -39,11 +39,11 @@ class LogWidgetState extends State<LogWidget>
       appBar: AppBar(
         title: Text(
           widget.netOptions.reqOptions!.url!,
-          style: const TextStyle(fontSize: 11),
+          style: const TextStyle(fontSize: 11, color: Colors.black),
         ),
         backgroundColor: Colors.white,
         elevation: 1.0,
-        titleTextStyle: theme.textTheme.headlineSmall,
+        titleTextStyle: const TextStyle(fontSize: 11, color: Colors.black),
         iconTheme: theme.iconTheme,
       ),
       body: PageView.builder(
