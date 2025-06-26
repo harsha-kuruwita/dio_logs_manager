@@ -25,10 +25,10 @@ class LogRequestWidgetState extends State<LogRequestWidget>
   Widget build(BuildContext context) {
     super.build(context);
     final reqOpt = widget.netOptions.reqOptions!;
-    // final resOpt = widget.netOptions.resOptions;
-    // final requestTime = getTimeStr(reqOpt.requestTime!);
-    // final responseTime =
-    //     getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
+    final resOpt = widget.netOptions.resOptions;
+    final requestTime = getTimeStr(reqOpt.requestTime!);
+    final responseTime =
+        getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
 
     return Scaffold(
       backgroundColor: Colors.yellow,
