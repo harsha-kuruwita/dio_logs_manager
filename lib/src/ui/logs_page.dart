@@ -18,15 +18,25 @@ class LogsPage extends StatefulWidget {
 class _LogsPageState extends State<LogsPage> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
+    // Removed theme dependency to use explicit styles.
     final keys = LogPoolManager.getInstance()!.keys;
     return Scaffold(
+      // Set the background color of the page to white.
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Request Logs"),
+        // Set AppBar background to white.
         backgroundColor: Colors.white,
-        titleTextStyle: theme.textTheme.headlineSmall,
-        iconTheme: theme.iconTheme,
+        // Set AppBar title text style to have black color.
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 20.0,
+          fontWeight: FontWeight.w500,
+        ),
+        // Set AppBar icons to be black.
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         elevation: 1.0,
         actions: [
           InkWell(
@@ -43,8 +53,11 @@ class _LogsPageState extends State<LogsPage> {
               child: Align(
                 child: Text(
                   debugBtnIsShow() ? 'close overlay' : 'open overlay',
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  // Set action text style to be black.
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -59,8 +72,11 @@ class _LogsPageState extends State<LogsPage> {
               child: Align(
                 child: Text(
                   'clear',
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  // Set action text style to be black.
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -72,12 +88,19 @@ class _LogsPageState extends State<LogsPage> {
         builder: (context, map, child) {
           return map.isEmpty
               ? const Center(
-                  child: Text('No request log'),
+                  // Set the placeholder text color to black.
+                  child: Text(
+                    'No request log',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 )
               : ListView.builder(
                   reverse: false,
                   itemCount: map.length,
                   itemBuilder: (BuildContext context, int index) {
+                    // Note: The `NetOptionsListTile` widget will use default styles.
+                    // If it internally relies on `Theme.of(context)`, it may need
+                    // to be updated separately to ensure a consistent look.
                     return NetOptionsListTile(
                       key: ValueKey(keys[index]),
                       item: map[keys[index]]!,
