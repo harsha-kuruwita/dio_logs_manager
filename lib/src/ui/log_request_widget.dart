@@ -24,11 +24,11 @@ class LogRequestWidgetState extends State<LogRequestWidget>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final reqOpt = widget.netOptions.reqOptions!;
-    final resOpt = widget.netOptions.resOptions;
-    final requestTime = getTimeStr(reqOpt.requestTime!);
-    final responseTime =
-        getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
+    // final reqOpt = widget.netOptions.reqOptions!;
+    // final resOpt = widget.netOptions.resOptions;
+    // final requestTime = getTimeStr(reqOpt.requestTime!);
+    // final responseTime =
+    //     getTimeStr(resOpt?.responseTime ?? reqOpt.requestTime!);
 
     return Scaffold(
       backgroundColor: Colors.yellow,
@@ -43,13 +43,7 @@ class LogRequestWidgetState extends State<LogRequestWidget>
                 child: Row(
                   children: [
                     TextButton(
-                      onPressed: () {
-                        copyClipboard(
-                            context,
-                            'url:${reqOpt.url}\nmethod:${reqOpt.method}\nrequestTime:$requestTime\nresponseTime:$responseTime\n'
-                            'duration:${resOpt?.duration ?? 0}ms\n${dataFormat(reqOpt.data)}'
-                            '\nparams:${toJson(reqOpt.params)}\nheader:${reqOpt.headers}');
-                      },
+                      onPressed: () {},
                       child: const Text(
                         'Copy all',
                         style: TextStyle(fontSize: 10, color: Colors.black),
