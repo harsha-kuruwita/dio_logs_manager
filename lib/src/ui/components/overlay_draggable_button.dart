@@ -88,7 +88,7 @@ class DrawableButtonWidgetState extends State<DrawableButtonWidget> {
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 14,
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.normal,
               decoration: TextDecoration.none,
             ),

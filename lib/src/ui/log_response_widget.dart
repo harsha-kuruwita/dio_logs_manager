@@ -85,7 +85,10 @@ class LogResponseWidgetState extends State<LogResponseWidget>
   Widget _buildResponse(BuildContext context, dynamic data) {
     if (data is ResponseBody) {
       //Para los Stream AKA descarga de ficheros
-      return const Text("Content type was Stream.");
+      return const Text(
+        "Content type was Stream.",
+        style: TextStyle(color: Colors.black),
+      );
     }
     return buildJsonView(context, 'Response.data', data, fontSize: fontSize);
   }

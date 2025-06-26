@@ -22,7 +22,10 @@ class LogErrorWidgetState extends State<LogErrorWidget>
       body: SizedBox(
         height: double.infinity,
         child: Center(
-          child: Text(widget.netOptions.errOptions?.errorMsg ?? 'no error'),
+          child: Text(
+            widget.netOptions.errOptions?.errorMsg ?? 'no error',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

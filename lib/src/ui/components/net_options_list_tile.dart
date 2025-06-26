@@ -16,9 +16,7 @@ class NetOptionsListTile extends StatelessWidget {
 
     var requestTime = getTimeStr1(reqOpt.requestTime!);
 
-    Color? textColor = (item.errOptions != null)
-        ? Colors.red
-        : Theme.of(context).textTheme.bodyLarge!.color;
+    Color? textColor = (item.errOptions != null) ? Colors.red : Colors.black;
 
     return Card(
       margin: const EdgeInsets.all(8),

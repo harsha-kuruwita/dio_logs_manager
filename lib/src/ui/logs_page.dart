@@ -24,7 +24,10 @@ class _LogsPageState extends State<LogsPage> {
       // Set the background color of the page to white.
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Request Logs"),
+        title: const Text(
+          "Request Logs",
+          style: TextStyle(color: Colors.black),
+        ),
         // Set AppBar background to white.
         backgroundColor: Colors.white,
         // Set AppBar title text style to have black color.
