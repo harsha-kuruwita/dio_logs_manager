@@ -38,22 +38,18 @@ class LogRequestWidgetState extends State<LogRequestWidget>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Test',
-                style: TextStyle(color: Colors.black, fontSize: 22),
-              ),
               _LogRequestGeneralInfo(
                 netOptions: widget.netOptions,
               ),
-              // LogsParams(
-              //   params: widget.netOptions.reqOptions?.headers,
-              //   label: "Headers",
-              // ),
-              // _LogsRequestBody(data: reqOpt.data),
-              // LogsParams(
-              //   params: reqOpt.params,
-              //   label: "Params",
-              // ),
+              LogsParams(
+                params: widget.netOptions.reqOptions?.headers,
+                label: "Headers",
+              ),
+              _LogsRequestBody(data: reqOpt.data),
+              LogsParams(
+                params: reqOpt.params,
+                label: "Params",
+              ),
             ],
           ),
         ),
