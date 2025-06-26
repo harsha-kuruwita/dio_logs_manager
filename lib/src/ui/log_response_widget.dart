@@ -22,61 +22,64 @@ class LogResponseWidgetState extends State<LogResponseWidget>
     super.build(context);
     final response = widget.netOptions.resOptions;
     final responseData = response?.data ?? 'no response';
-    return SingleChildScrollView(
-        child: Column(
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            // const SizedBox(width: 10),
-            // Text(isShowAll ? 'shrink all' : 'expand all'),
-            // Switch(
-            //   value: isShowAll,
-            //   onChanged: (check) {
-            //     isShowAll = check;
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+          child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              // const SizedBox(width: 10),
+              // Text(isShowAll ? 'shrink all' : 'expand all'),
+              // Switch(
+              //   value: isShowAll,
+              //   onChanged: (check) {
+              //     isShowAll = check;
 
-            //     setState(() {});
-            //   },
-            // ),
-            Expanded(
-              child: Slider(
-                value: fontSize,
-                max: 30,
-                min: 1,
-                onChanged: (v) {
-                  fontSize = v;
-                  setState(() {});
-                },
+              //     setState(() {});
+              //   },
+              // ),
+              Expanded(
+                child: Slider(
+                  value: fontSize,
+                  max: 30,
+                  min: 1,
+                  onChanged: (v) {
+                    fontSize = v;
+                    setState(() {});
+                  },
+                ),
               ),
-            ),
-            const Text(
-              'Tip: long press a key to copy the value to the clipboard',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.red,
+              const Text(
+                'Tip: long press a key to copy the value to the clipboard',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.red,
+                ),
               ),
-            ),
-          ],
-        ),
-        LogsParams(
-          label: 'Headers',
-          params: response?.headers,
-          fontSize: fontSize,
-        ),
-        Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _buildResponse(context, responseData),
-              ],
+            ],
+          ),
+          LogsParams(
+            label: 'Headers',
+            params: response?.headers,
+            fontSize: fontSize,
+          ),
+          Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildResponse(context, responseData),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    ));
+        ],
+      )),
+    );
   }
 
   Widget _buildResponse(BuildContext context, dynamic data) {

@@ -17,10 +17,13 @@ class LogErrorWidgetState extends State<LogErrorWidget>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SizedBox(
-      height: double.infinity,
-      child: Center(
-        child: Text(widget.netOptions.errOptions?.errorMsg ?? 'no error'),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SizedBox(
+        height: double.infinity,
+        child: Center(
+          child: Text(widget.netOptions.errOptions?.errorMsg ?? 'no error'),
+        ),
       ),
     );
   }
